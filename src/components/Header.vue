@@ -2,8 +2,11 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
-const subLink = ref(false)
 const menuIsActive = ref(false)
+
+const toogleMenu = () => {
+  menuIsActive.value = !menuIsActive.value
+}
 </script>
 
 <template>
@@ -53,54 +56,18 @@ const menuIsActive = ref(false)
               />
             </svg>
           </RouterLink>
-          <div class="flex justify-between w-auto gap-7 text-gray-300 transition flex-nowrap">
-            <div
-              class="flex items-center gap-1 relative py-2.5 hover:text-white"
-              @mouseover="subLink = true"
-              @mouseleave="subLink = false"
-            >
-              <span>Services</span
-              ><svg
-                width="12"
-                height="7"
-                viewBox="0 0 12 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="mt-1 transition"
-                :style="{ transform: subLink ? 'rotate(180deg)' : 'rotate(0deg)' }"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M11.1377 0.52827C11.3981 0.788619 11.3981 1.21073 11.1377 1.47108L6.47108 6.13775C6.21073 6.3981 5.78862 6.3981 5.52827 6.13775L0.861604 1.47108C0.601254 1.21073 0.601254 0.788619 0.861604 0.52827C1.12195 0.26792 1.54406 0.26792 1.80441 0.52827L5.99967 4.72353L10.1949 0.52827C10.4553 0.26792 10.8774 0.26792 11.1377 0.52827Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <div
-                class="flex-col hidden absolute top-9 bg-blue-400"
-                :style="{ display: subLink ? 'flex' : 'none' }"
-              >
-                <div class="py-0.5 w-20 text-center hover:bg-blue-800 transition cursor-pointer">
-                  Some
-                </div>
-                <div class="py-0.5 w-20 text-center hover:bg-blue-800 transition cursor-pointer">
-                  Some
-                </div>
-                <div class="py-0.5 w-20 text-center hover:bg-blue-800 transition cursor-pointer">
-                  Some
-                </div>
-                <div class="py-0.5 w-20 text-center hover:bg-blue-800 transition cursor-pointer">
-                  Some
-                </div>
-              </div>
-            </div>
+          <div
+            :class="{ active: menuIsActive }"
+            class="menu flex md:relative absolute md:text-base text-2xl right-0 md:flex-row flex-col md:bg-transparent w-full md:h-auto md:top-[-10px] top-17 h-[1000vh] text-white pt-5 md:pl-0 pl-12 md:justify-between justify-start md:w-auto gap-7 md:text-gray-300 transition flex-nowrap delay-700"
+          >
+            <RouterLink to="/" class="py-2.5 hover:text-white">Services</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">Case Studies</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">About Us</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">Blog</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">Contacts</RouterLink>
           </div>
         </div>
-        <div class="flex w-1/4 content-center justify-end">
+        <div class="flex lg:w-1/4 w-1/5 content-center justify-end items-center gap-5">
           <a
             href="/"
             class="lg:px-10 px-2.5 py-2.5 rounded-full whitespace-nowrap lg:rounded-md hover:bg-blue-950 transition bg-primary"
@@ -153,7 +120,15 @@ const menuIsActive = ref(false)
             </span>
             <span class="lg:flex hidden">Talk to a human</span>
           </a>
-          <button type="button" class="md:hidden block"></button>
+          <button
+            type="button"
+            class="md:hidden flex flex-col justify-between items-center w-8 h-6"
+            @click="toogleMenu()"
+          >
+            <span class="w-8 bg-white h-0.5"></span>
+            <span class="w-8 bg-white h-0.5"></span>
+            <span class="w-8 bg-white h-0.5"></span>
+          </button>
         </div>
       </div>
     </div>
@@ -167,5 +142,21 @@ header {
     #232441 56.38%,
     #1e212c 100%
   );
+}
+
+@media (max-width: 768px) {
+  .menu {
+    background: radial-gradient(
+      83.15% 154.4% at 10% 13.52%,
+      #1e212c 0%,
+      #232441 56.38%,
+      #1e212c 100%
+    );
+    right: -1000%;
+    transition: 0.2s;
+  }
+  .menu.active {
+    right: 0;
+  }
 }
 </style>
