@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 const menuIsActive = ref(false)
 
-const toogleMenu = () => {
+const toggleMenu = () => {
   menuIsActive.value = !menuIsActive.value
 }
 </script>
@@ -12,7 +12,7 @@ const toogleMenu = () => {
 <template>
   <header class="fixed left-0 w-full z-100 text-white font-bold">
     <div class="contain">
-      <div class="flex justify-between py-2.5">
+      <div class="flex justify-between h-17 items-center">
         <div class="flex items-center lg:gap-20 md:gap-5 gap-5 w-full">
           <RouterLink to="/" class="py-2.5">
             <svg
@@ -75,8 +75,8 @@ const toogleMenu = () => {
             <span class="lg:hidden flex text-white">
               <svg
                 fill="currentColor"
-                height="30px"
-                width="30px"
+                height="25px"
+                width="25px"
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const toogleMenu = () => {
           <button
             type="button"
             class="md:hidden flex flex-col justify-between items-center w-8 h-6"
-            @click="toogleMenu()"
+            @click="toggleMenu()"
           >
             <span class="w-8 bg-white h-0.5"></span>
             <span class="w-8 bg-white h-0.5"></span>

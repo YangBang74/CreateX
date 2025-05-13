@@ -4,9 +4,9 @@
   <section class="hero py-20">
     <div class="contain">
       <div class="flex flex-col justify-between">
-        <div class="flex justify-between items-center">
-          <div>
-            <h1 class="xl:text-7xl lg:text-6xl md:text-5xln text-white font-black my-14">
+        <div class="flex flex-row justify-between items-center mb-20">
+          <div class="sm:w-1/2 w-full">
+            <h1 class="xl:text-7xl lg:text-6xl text-5xl text-white font-black my-14">
               Best <span class="text-primary">SEO & Marketing</span><br />
               Solutions for you
             </h1>
@@ -14,11 +14,11 @@
               >Get free analysis</a
             >
           </div>
-          <div>
+          <div class="w-1/2 sm:block hidden">
             <img src="/home/hero-ill.png" alt="" />
           </div>
         </div>
-        <div class="flex justify-start gap-10 text-white font-bold">
+        <div class="flex sm:flex-row flex-col justify-start gap-10 text-white font-bold">
           <div class="flex items-center gap-3">
             <svg
               width="40"
@@ -128,6 +128,40 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="my-10">
+    <div class="contain">
+      <div class="flex lg:flex-row flex-col justify-between items-center gap-10">
+        <div class="font-bold text-2xl lg:w-1/2 w-full">
+          Createx SEO Agency is a full-service digital marketing agency. We help businesses make
+          more money through a wealth of performance data and market research. We create
+          science-based SEO strategies to empower our clients.
+        </div>
+        <div class="flex flex-wrap sm:flex-row flex-col lg:w-1/2 w-full gap-y-5">
+          <div class="flex gap-2.5 items-center sm:w-1/2 w-full">
+            <img src="/home/award-1.png" alt="Clutch Award" />
+            Top SEO Companies 2020 by Clutch
+          </div>
+          <div class="flex gap-2.5 items-center sm:w-1/2 w-full">
+            <img src="/home/award-2.png" alt="UpCity Award" />
+            Top Digital Marketing Agency 2019 by UpCity
+          </div>
+          <div class="flex gap-2.5 items-center sm:w-1/2 w-full">
+            <img src="/home/award-3.png" alt="Forbes Agency Council Award" />
+            Official Member 2020 by Forbes Agency Council
+          </div>
+          <div class="flex gap-2.5 items-center sm:w-1/2 w-full">
+            <img src="/home/award-4.png" alt="Top Developers Award" />
+            Top SEO Companies 2020 by Top Developers
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-10">
+    <div class="contain">
+      
     </div>
   </section>
 </template>
