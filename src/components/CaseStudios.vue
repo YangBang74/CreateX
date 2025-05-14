@@ -214,7 +214,7 @@ const info = [
       </div>
       <div class="flex justify-center items-center gap-10">
         <span class="font-bold text-2xl">Explore more case studies</span>
-        <LinkButton text="View all case studies" />
+        <LinkButton text="View all case studies" :link="google.com" />
       </div>
     </div>
   </section>

@@ -8,5 +8,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <a :src="link" class="px-12 py-3 bg-primary rounded-sm text-white"> {{ text }} </a>
+  <a
+    :href="link"
+    target="_blank"
+    class="px-12 py-3 bg-primary rounded-sm text-white cursor-pointer"
+  >
+    {{ text }}
+  </a>
 </template>

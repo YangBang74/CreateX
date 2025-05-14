@@ -4,6 +4,7 @@ import CircularProgress from '@/components/CirculeProgress.vue'
 import CTA from '@/components/CTA.vue'
 import Questions from '@/components/Questions.vue'
 import CaseStudios from '@/components/CaseStudios.vue'
+import LinkButton from '@/components/LinkButton.vue'
 
 const service = ref(1)
 </script>
@@ -180,12 +181,7 @@ const service = ref(1)
             sapien. Feugiat lacus, suscipit eu sociis et quis hendrerit. Cras at ac magna ultricies
             orci.
           </p>
-          <a
-            href="/"
-            class="px-10 py-2.5 text-white rounded-sm whitespace-nowrap lg:rounded-md hover:bg-blue-950 transition bg-primary"
-          >
-            Talk to a human
-          </a>
+          <LinkButton text="Talk to a human" link="/" />
         </div>
         <div class="md:w-1/2 w-full">
           <img src="/home/about.png" alt="Createx Agency Personal" class="w-full" />
