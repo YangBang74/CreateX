@@ -18,6 +18,10 @@ body {
   border-color: #7772f1;
 }
 
+.hover-bg-primary:hover {
+  background-color: #7772f1;
+}
+
 .contain {
   margin: 0 auto;
   padding: 0 120px;

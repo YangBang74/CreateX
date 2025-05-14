@@ -8,5 +8,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <a :src="link" class="px-48 py-3 bg-primary rounded-sm text-white"> {{ text }} </a>
+  <a :src="link" class="px-12 py-3 bg-primary rounded-sm text-white"> {{ text }} </a>
 </template>

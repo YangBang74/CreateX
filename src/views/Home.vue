@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import CircularProgress from '@/components/CirculeProgress.vue'
 import CTA from '@/components/CTA.vue'
 import Questions from '@/components/Questions.vue'
+import CaseStudios from '@/components/CaseStudios.vue'
 
 const service = ref(1)
 </script>
@@ -202,6 +203,7 @@ const service = ref(1)
             :size="148"
             color="#F89828"
             bg-color="#F8982890"
+            :fontSize="32"
           />
           <p class="text-gray-800 mt-5">Years of experience</p>
         </div>
@@ -212,6 +214,7 @@ const service = ref(1)
             :size="148"
             color="#F52F6E"
             bg-color="#F52F6E90"
+            :fontSize="32"
           />
           <p class="text-gray-800 mt-5">Awards</p>
         </div>
@@ -222,6 +225,7 @@ const service = ref(1)
             :size="148"
             color="#5A87FC"
             bg-color="#5A87FC90"
+            :fontSize="32"
           />
           <p class="text-gray-800 mt-5">Projects</p>
         </div>
@@ -232,6 +236,7 @@ const service = ref(1)
             :size="148"
             color="#03CEA4"
             bg-color="#03CEA490"
+            :fontSize="32"
           />
           <p class="text-gray-800 mt-5">Happy clients</p>
         </div>
@@ -344,6 +349,7 @@ const service = ref(1)
   </section>
   <CTA />
   <Questions />
+  <CaseStudios />
 </template>
 
 <style scoped>

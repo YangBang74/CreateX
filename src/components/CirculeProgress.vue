@@ -10,6 +10,7 @@ const props = defineProps({
   textColor: { type: String, default: '#333' },
   showText: { type: Boolean, default: true },
   string: { type: String, default: 0 },
+  fontSize: { type: Number, default: 16 },
 })
 
 const radius = computed(() => (props.size - props.stroke) / 2)
@@ -49,7 +50,7 @@ const dashOffset = computed(() => circumference.value * (1 - props.progress / 10
       dominant-baseline="central"
       font-family="Lato, sans-serif"
       font-weight="900"
-      font-size="32px"
+      :font-size="fontSize"
       :fill="textColor"
     >
       {{ string }}
