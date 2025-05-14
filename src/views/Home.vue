@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import CircularProgress from '@/components/CirculeProgress.vue'
+import CTA from '@/components/CTA.vue'
+import Questions from '@/components/Questions.vue'
+
+const service = ref(1)
+</script>
 
 <template>
   <section class="hero py-20">
@@ -159,11 +166,184 @@
       </div>
     </div>
   </section>
-  <section class="my-10">
+  <section class="my-20">
     <div class="contain">
-      
+      <div class="flex justify-between items-center gap-10 md:flex-row flex-col-reverse">
+        <div class="md:w-1/2 w-full">
+          <h1 class="font-black text-5xl mb-7">Createx Agency</h1>
+          <p class="text-gray-700 mb-10">
+            Lacus ac mollis vitae viverra. Tincidunt est, feugiat montes, viverra ullamcorper
+            mi dui, nulla pharetra. Sapien urna nullam elit diam mauris orci. Volutpat quam tempus
+            justo, aliquam. Tortor ultrices mattis eget orci eu nisi sed augue odio. Et senectus
+            risus, pharetra, tristique libero. Dolor risus ac quam dictum mattis ultrices laoreet
+            sapien. Feugiat lacus, suscipit eu sociis et quis hendrerit. Cras at ac magna ultricies
+            orci.
+          </p>
+          <a
+            href="/"
+            class="px-10 py-2.5 text-white rounded-sm whitespace-nowrap lg:rounded-md hover:bg-blue-950 transition bg-primary"
+          >
+            Talk to a human
+          </a>
+        </div>
+        <div class="md:w-1/2 w-full">
+          <img src="/home/about.png" alt="Createx Agency Personal" class="w-full" />
+        </div>
+      </div>
     </div>
   </section>
+  <section class="my-20">
+    <div class="contain">
+      <div class="flex justify-center items-center gap-12 flex-wrap">
+        <div class="text-center">
+          <CircularProgress
+            progress="87"
+            string="10"
+            :size="148"
+            color="#F89828"
+            bg-color="#F8982890"
+          />
+          <p class="text-gray-800 mt-5">Years of experience</p>
+        </div>
+        <div class="text-center">
+          <CircularProgress
+            progress="75"
+            string="45"
+            :size="148"
+            color="#F52F6E"
+            bg-color="#F52F6E90"
+          />
+          <p class="text-gray-800 mt-5">Awards</p>
+        </div>
+        <div class="text-center">
+          <CircularProgress
+            progress="83"
+            string="540+"
+            :size="148"
+            color="#5A87FC"
+            bg-color="#5A87FC90"
+          />
+          <p class="text-gray-800 mt-5">Projects</p>
+        </div>
+        <div class="text-center">
+          <CircularProgress
+            progress="100"
+            string="100%"
+            :size="148"
+            color="#03CEA4"
+            bg-color="#03CEA490"
+          />
+          <p class="text-gray-800 mt-5">Happy clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="contain">
+      <h1 class="mb-10 font-black text-5xl text-center">Our services</h1>
+      <div
+        class="flex items-center sm:justify-between justify-evenly mb-14 sm:flex-nowrap flex-wrap gap-y-4"
+      >
+        <button
+          type="button"
+          class="sm:w-full w-1/3 py-2.5 rounded-sm font-bold cursor-pointer transition"
+          :style="{
+            border: service == 1 ? '1px solid #7772F1' : 'none',
+            color: service == 1 ? '#7772F1' : '#9A9CA5',
+          }"
+          @click="service = 1"
+        >
+          Social Media
+        </button>
+        <button
+          type="button"
+          class="sm:w-full w-1/3 py-2.5 rounded-sm font-bold cursor-pointer transition"
+          :style="{
+            border: service == 2 ? '1px solid #7772F1' : 'none',
+            color: service == 2 ? '#7772F1' : '#9A9CA5',
+          }"
+          @click="service = 2"
+        >
+          SEO
+        </button>
+        <button
+          type="button"
+          class="sm:w-full w-1/3 py-2.5 rounded-sm font-bold cursor-pointer transition"
+          :style="{
+            border: service == 3 ? '1px solid #7772F1' : 'none',
+            color: service == 3 ? '#7772F1' : '#9A9CA5',
+          }"
+          @click="service = 3"
+        >
+          Research
+        </button>
+        <button
+          type="button"
+          class="sm:w-full w-1/3 py-2.5 rounded-sm font-bold cursor-pointer transition"
+          :style="{
+            border: service == 4 ? '1px solid #7772F1' : 'none',
+            color: service == 4 ? '#7772F1' : '#9A9CA5',
+          }"
+          @click="service = 4"
+        >
+          Content & PR
+        </button>
+        <button
+          type="button"
+          class="sm:w-full w-1/3 py-2.5 rounded-sm font-bold cursor-pointer transition"
+          :style="{
+            border: service == 5 ? '1px solid #7772F1' : 'none',
+            color: service == 5 ? '#7772F1' : '#9A9CA5',
+          }"
+          @click="service = 5"
+        >
+          Payed Traffic
+        </button>
+      </div>
+      <div v-if="service == 1" class="flex justify-between items-center md:flex-row flex-col">
+        <div class="md:w-1/2 w-full">
+          <h3 class="font-bold text-3xl">Complete Worflow For Any SEO Professional</h3>
+          <ul class="my-5">
+            <li class="service-list text-gray-800 my-2">
+              Aenean enim tellus morbi nisl vulputate dictumst.
+            </li>
+            <li class="service-list text-gray-800 my-2">Nibh sapien volutpat lacus augue.</li>
+            <li class="service-list text-gray-800 my-2">
+              Vel in amet, placerat adipiscing est pharetra.
+            </li>
+            <li class="service-list text-gray-800 my-2">Gravida ornare sit in et ut sit sem id.</li>
+            <li class="service-list text-gray-800 my-2">
+              Ultrices pellentesque dictum enim egestas ac diam.
+            </li>
+            <li class="service-list text-gray-800">
+              Sit semper enim senectus integer ut turpis et.
+            </li>
+          </ul>
+          <div class="flex gap-6 justify-start items-center my-10">
+            <a
+              href="/"
+              class="px-8 leading-10 border border-primary rounded-sm text-primary text-sm whitespace-nowrap"
+              >Learn more</a
+            >
+            <a
+              href="/"
+              class="px-8 leading-10 bg-primary text-white rounded-sm text-sm whitespace-nowrap"
+              >Try SEO toolkit</a
+            >
+          </div>
+        </div>
+        <div class="md:w-1/2 w-full">
+          <img src="/home/service.png" alt="Social Media Illustration" />
+        </div>
+      </div>
+      <div v-if="service == 2" class="min-h-[461px]">SEO</div>
+      <div v-if="service == 3" class="min-h-[461px]">Reasearch</div>
+      <div v-if="service == 4" class="min-h-[461px]">Content & PR</div>
+      <div v-if="service == 5" class="min-h-[461px]">Payed Tradic</div>
+    </div>
+  </section>
+  <CTA />
+  <Questions />
 </template>
 
 <style scoped>
@@ -178,5 +358,14 @@
     #232441f1 56.38%,
     #1e212cf1 100%
   );
+}
+
+.service-list::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('/ok.svg') no-repeat center 4px / contain;
+  margin-right: 12px;
 }
 </style>
