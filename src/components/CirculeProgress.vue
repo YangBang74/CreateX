@@ -2,15 +2,15 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  size: { type: Number, default: 120 },
-  stroke: { type: Number, default: 6 },
+  size: { type: String, default: 120 },
+  stroke: { type: String, default: 6 },
   progress: { type: String, default: 0 },
   color: { type: String, default: '#4caf50' },
   bgColor: { type: String, default: '#ddd' },
   textColor: { type: String, default: '#333' },
   showText: { type: Boolean, default: true },
   string: { type: String, default: 0 },
-  fontSize: { type: Number, default: 16 },
+  fontSize: { type: String, default: 16 },
 })
 
 const radius = computed(() => (props.size - props.stroke) / 2)

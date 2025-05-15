@@ -3,7 +3,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import Glide from '@glidejs/glide'
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import CirculeProgress from './CirculeProgress.vue'
-import LinkButton from './LinkButton.vue'
+import LinkButton from './UI/LinkButton.vue'
 
 const glide = ref(null)
 let glideInstance = null
@@ -14,7 +14,15 @@ onMounted(() => {
     startAt: 0,
     perView: 3,
     gap: 20,
-    autoplay: 2000,
+    autoplay: 5000,
+    breakpoints: {
+      1248: {
+        perView: 2,
+      },
+      768: {
+        perView: 1,
+      },
+    },
   })
   glideInstance.mount()
 })
@@ -121,7 +129,7 @@ const info = [
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <li
-              class="glide__slide shadow-lg border border-gray-300 rounded-sm hover:bg-gray-900 hover:text-white transition my-10"
+              class="glide__slide max-w-100 shadow-lg border border-gray-300 rounded-sm hover:bg-gray-900 hover:text-white transition my-10"
               v-for="card in info"
               :key="card.key"
             >
@@ -135,7 +143,7 @@ const info = [
                   <div class="flex gap-3">
                     <div>
                       <CirculeProgress
-                        :size="40"
+                        size="40"
                         stroke="4"
                         :progress="card.c1Progress"
                         :bgColor="card.c1BgColor"
@@ -212,9 +220,9 @@ const info = [
           </button>
         </div>
       </div>
-      <div class="flex justify-center items-center gap-10">
+      <div class="flex md:flex-row flex-col justify-center items-center gap-10">
         <span class="font-bold text-2xl">Explore more case studies</span>
-        <LinkButton text="View all case studies" :link="google.com" />
+        <LinkButton text="View all case studies" link="google.com" />
       </div>
     </div>
   </section>

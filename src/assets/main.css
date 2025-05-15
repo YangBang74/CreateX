@@ -14,8 +14,16 @@ body {
   color: #7772f1;
 }
 
+.hover-text-primary:hover {
+  color: #7772f1;
+}
+
 .border-primary {
   border-color: #7772f1;
+}
+
+.border-primary\/40 {
+  border-color: #7772f166;
 }
 
 .hover-bg-primary:hover {
