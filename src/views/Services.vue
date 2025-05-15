@@ -1,4 +1,30 @@
-<script setup></script>
+<script setup>
+import { getCurrentInstance, onMounted } from 'vue'
+
+const instance = getCurrentInstance()
+
+const scrollReveal = {
+  mounted(el) {
+    el.classList.add('before-reveal')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal')
+          } else {
+            entry.target.classList.remove('reveal')
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+  },
+}
+
+instance.appContext.app.directive('scroll-reveal', scrollReveal)
+</script>
+
 <template>
   <section class="hero py-20">
     <div class="contain">
@@ -74,7 +100,7 @@
       </div>
     </div>
   </section>
-  <section class="my-20">
+  <section v-scroll-reveal class="my-20">
     <div class="contain">
       <div class="flex justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-1/2 w-full">
@@ -104,7 +130,7 @@
       </div>
     </div>
   </section>
-  <section class="my-20">
+  <section v-scroll-reveal class="my-20">
     <div class="contain">
       <div class="flex justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-1/2 w-full">
@@ -134,7 +160,7 @@
       </div>
     </div>
   </section>
-  <section class="my-20">
+  <section v-scroll-reveal class="my-20">
     <div class="contain">
       <div class="flex justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-1/2 w-full">
@@ -163,7 +189,7 @@
       </div>
     </div>
   </section>
-  <section class="my-20">
+  <section v-scroll-reveal class="my-20">
     <div class="contain">
       <div class="flex justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-1/2 w-full">
@@ -192,7 +218,7 @@
       </div>
     </div>
   </section>
-  <section class="my-20">
+  <section v-scroll-reveal class="my-20">
     <div class="contain">
       <div class="flex justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-1/2 w-full">
@@ -224,7 +250,26 @@
   </section>
 </template>
 <style scoped>
+.before-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero {
   background: url('/hero-background.png') no-repeat center center / cover;
+}
+
+.contain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 </style>
