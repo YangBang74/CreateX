@@ -492,7 +492,6 @@ import Blogs from '@/components/Blogs.vue'
 .hero {
   background: url('/hero-background.png') no-repeat center center / cover;
 }
-
 .form {
   background: url('/about/form.png') no-repeat left center / cover #7772f1;
 }
