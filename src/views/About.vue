@@ -2,6 +2,19 @@
 import CirculeStatic from '@/components/CirculeStatic.vue'
 import Questions from '@/components/Questions.vue'
 import Blogs from '@/components/Blogs.vue'
+import TeamCard from '@/components/TeamCard.vue'
+import LinkButton from '@/components/UI/LinkButton.vue'
+
+const teams = [
+  { img: '/team/team-1.jpg', name: 'Courtney Alexander', job: 'Founder and CEO' },
+  { img: '/team/team-2.jpg', name: 'Johnny Lane', job: 'Director of Client Services' },
+  { img: '/team/team-3.jpg', name: 'Diane Mccoy', job: 'Lead Digital PR Strategist' },
+  { img: '/team/team-4.jpg', name: 'Judith Warren', job: 'Cheaf Marketing Officer' },
+  { img: '/team/team-5.jpg', name: 'Floyd Simmmons', job: 'Account Director' },
+  { img: '/team/team-6.jpg', name: 'Shawn Edwards', job: 'Director of PPC' },
+  { img: '/team/team-7.jpg', name: 'Jane Cooper', job: 'Digital Marketing Manager' },
+  { img: '/team/team-8.jpg', name: 'Soham Alexander', job: 'Director of SEO' },
+]
 </script>
 <template>
   <section class="hero py-20">
@@ -482,6 +495,33 @@ import Blogs from '@/components/Blogs.vue'
             Analyse your site
           </button>
         </form>
+      </div>
+    </div>
+  </section>
+  <section class="my-20">
+    <div class="contain">
+      <h1 class="font-black text-4xl text-center">Meet our team</h1>
+      <div class="flex flex-wrap justify-evenly gap-x-2 mt-15 gap-y-15">
+        <div v-for="team in teams">
+          <TeamCard :img="team.img" :name="team.name" :job="team.job" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 bg-gray-200">
+    <div class="contain">
+      <div class="flex md:flex-row flex-col gap-10 justify-between items-center">
+        <div class="md:w-1/2 w-full justify-center">
+          <img src="/about/career.png" alt="Career Illustration" />
+        </div>
+        <div class="md-1/2 w-full">
+          <h1 class="font-black text-4xl">Careers at Createx Agency</h1>
+          <p class="text-gray-800 text-xl mt-10 mb-15">
+            Ready to join us on our mission to deliver the best sales development services
+            to businesses around the globe? We’re hiring!
+          </p>
+          <LinkButton text="See careers" />
+        </div>
       </div>
     </div>
   </section>
