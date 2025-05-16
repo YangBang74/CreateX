@@ -4,8 +4,8 @@ import { RouterLink } from 'vue-router'
 <template>
   <footer class="bg-gray-900">
     <div class="contain">
-      <div class="pt-10 flex justify-between border-b">
-        <div class="flex justify-between flex-col pb-5 w-1/2">
+      <div class="pt-10 flex md:flex-row flex-col justify-between border-b">
+        <div class="flex justify-between flex-col pb-5 md:w-1/2 w-full">
           <RouterLink to="/" class="py-2.5">
             <svg
               width="130"
@@ -135,7 +135,7 @@ import { RouterLink } from 'vue-router'
             </a>
           </div>
         </div>
-        <nav class="text-white flex justify-evenly w-full">
+        <nav class="text-white flex justify-evenly w-full flex-wrap mb-4">
           <ul>
             <li class="font-bold">COMPANY</li>
             <li class="text-sm my-2 text-white/60 hover:text-white"><a href="/">About Us</a></li>
@@ -206,7 +206,7 @@ import { RouterLink } from 'vue-router'
         </nav>
       </div>
       <div>
-        <p class="text-white py-2.5 text-[12px]">© All rights reserved.Made with</p>
+        <p class="text-white py-2.5 text-[12px] text-center">© All rights reserved.</p>
       </div>
     </div>
   </footer>

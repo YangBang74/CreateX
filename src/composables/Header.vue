@@ -61,8 +61,8 @@ const toggleMenu = () => {
             class="menu flex md:relative absolute md:text-base text-2xl right-0 md:flex-row flex-col md:bg-transparent w-full md:h-auto md:top-[-10px] top-17 h-[1000vh] text-white pt-5 md:pl-0 pl-12 md:justify-between justify-start md:w-auto gap-7 md:text-gray-300 transition flex-nowrap delay-700"
           >
             <RouterLink to="/services" class="py-2.5 hover:text-white">Services</RouterLink>
-            <RouterLink to="/" class="py-2.5 hover:text-white">Case Studies</RouterLink>
-            <RouterLink to="/" class="py-2.5 hover:text-white">About Us</RouterLink>
+            <RouterLink to="/case-studios" class="py-2.5 hover:text-white">Case Studies</RouterLink>
+            <RouterLink to="/about-us" class="py-2.5 hover:text-white">About Us</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">Blog</RouterLink>
             <RouterLink to="/" class="py-2.5 hover:text-white">Contacts</RouterLink>
           </div>

@@ -1,6 +1,8 @@
 <script setup>
 import { getCurrentInstance, onMounted } from 'vue'
 
+document.title = 'Services - CreateX'
+
 const instance = getCurrentInstance()
 
 const scrollReveal = {

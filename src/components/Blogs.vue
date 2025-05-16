@@ -3,7 +3,6 @@ import { blogs } from '@/dates/blogs'
 import LinkButton from './UI/LinkButton.vue'
 
 const blog = blogs
-console.log(blog)
 </script>
 <template>
   <section class="my-20">
