@@ -520,7 +520,7 @@ const teams = [
             Ready to join us on our mission to deliver the best sales development services
             to businesses around the globe? We’re hiring!
           </p>
-          <LinkButton text="See careers" />
+          <LinkButton text="See careers" target="_parent" />
         </div>
       </div>
     </div>

@@ -32,6 +32,7 @@ button {
 }
 
 .hover-bg-primary:hover {
+  color: #fff;
   background-color: #7772f1;
 }
 
